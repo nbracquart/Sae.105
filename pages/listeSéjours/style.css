@@ -1,0 +1,72 @@
+
+/* locate */
+
+#locate > article:first-child > div {
+    background-color: var(--gris-fonce);
+    display: flex;
+    justify-content: center;
+}
+
+#locate > article > div > img {
+    width: 76vw;
+}
+
+
+#locate > article:nth-child(2) > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2vw;
+    justify-content: center;
+    flex-basis: 33%
+
+}
+
+#locate > article:nth-child(2) > div > div {
+    width: 20vw;
+    height: 30vw;
+    align-items: center;
+    border: 2px solid var(--gris-fonce);
+    background-color: var(--gris-clair);
+}
+
+
+#locate > article:nth-child(2) > div > div > div {
+    width: 100%;
+    height: 15vw;
+}
+
+#locate > article:nth-child(2) > div > div > div > img {
+    width: 100%;
+}
+
+strong {
+    padding: 1vw;
+    font-size: 0.9vw;
+}
+
+
+#locate > article:nth-child(2) > div > div > div {
+    margin-bottom: 0.5vw;
+}
+
+
+#locate > article:nth-child(2) > div > div > div > p {
+    padding: 1vw;
+    padding-top: 1.5vw;
+    padding-bottom: 0vw;
+    font-size: 0.8vw;
+}
+
+#locate > article:nth-child(2) > div > div > div > div > img {
+    width: 1.2vw;
+}
+
+
+#locate > article:nth-child(2) > div > div > div > div {
+    padding: 1vw;
+    font-size: 0.8vw;
+}
+
+/* make a custom css button, rectangle shape, no border round, violet-fonce */

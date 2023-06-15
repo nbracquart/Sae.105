@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    font-family: 'Montserrat';
+    box-sizing: border-box;
+}
+
+html,body {
+    height: 100%;
+}
+
+/* import all fonts  from ../assets/fonts/ */
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat/Montserrat-Regular.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat/Montserrat-Bold.ttf');
+    font-weight: 700;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat/Montserrat-Black.ttf');
+    font-weight: 500;
+    font-style: bolder;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat/Montserrat-ExtraBold.ttf');
+    font-weight: 900;
+    font-style: extraBold;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat/Montserrat-Medium.ttf');
+    font-weight: 400;
+    font-style: medium;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Montserrat/Montserrat-SemiBold.ttf');
+    font-weight: 600;
+    font-style: semiBold;
+}
+
+@font-face {
+  font-family: 'LeagueSpartan';
+  src: url('../assets/fonts/LeagueSpartan/LeagueSpartan-ExtraBold.ttf');
+  font-weight: 900;
+  font-style: extraBold;
+}
+
+@font-face {
+  font-family: 'LeagueSpartan';
+  src: url('../assets/fonts/LeagueSpartan/LeagueSpartan-Black.ttf');
+  font-weight: bolder;
+  font-style: black;
+}
+
+/* NAV BAR */
+
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--violet-clair);
+  color: #FFF;
+  height: 11.5%;
+  padding: 1em;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  justify-content: space-around;
+  padding: 0;
+  width: 89%;
+}
+
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+  
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+/* burger fouvert */
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+/* burger fermer */
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+/* change pc for any the other width than 700 */
+@media (min-width: 700px) {
+  .pc {
+    display:block !important;
+  }
+
+  .phone {
+    display:none !important;
+  }
+}
+
+@media (max-width: 700px) {
+  /* NAVBAR TELEPHONE */
+  .menu-button-container {
+    display: flex;
+  }
+  .menu {
+    position: absolute;
+    top: 17px;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid var(--violet-clair);
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: var(--violet-fonce);
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+
+  /* NAVBAR FOOTER */
+
+  footer {
+    height: 77vw !important;
+  }
+
+  /* put footer > img as the first child of footer */
+
+  footer > div > *:last-child > a {
+    display: none;
+  }
+
+  footer > div > *:last-child > div > a {
+    gap: 55%;
+  }
+
+  footer > div > *:last-child {
+    width: 100%;
+
+  }
+
+  
+  footer > div {
+    margin-top: 6vw !important;
+    flex-direction: column !important;
+  }
+
+  .pc {
+    display: none !important;
+  }
+
+  .phone {
+    width: 5vw;
+    display: block !important;
+  }
+
+  footer > *:nth-child(3) {
+    font-size: 1.95vw !important;
+  }
+
+  footer > div > *:first-child {
+    font-size: 16px;
+    width: 50%;
+    flex-direction: column;
+    gap: 5vw !important;
+  }
+
+  footer > hr {
+    margin-top: 1.5% !important;
+    width: 75% !important;
+  }
+
+  footer > div > div > div > a > img {
+    width: 20vw !important;
+    gap: 15vw;
+  }
+  
+}
+
+/* VAR */
+:root{
+    --violet-clair: #5954A9;
+    --violet-fonce: #353265;
+    --vert:#52B69A;
+    --gris-clair:#FEFEFE;
+    --gris-fonce:#EBEBEB;
+}
+
+.phone {
+  display: none;
+}
+
+.pc {
+  display: block;
+}
+
+/* FOOTER */
+footer {
+  height: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  background-color: var(--violet-fonce);
+}
+
+/* get the first child of footer */
+footer > div > *:first-child {
+  display: flex;
+  gap: 15%;
+  justify-content: center;
+  font-weight: 600;
+}
+
+footer > *:first-child {
+  justify-content: space-around;
+  gap: 5%;
+  /* 15 px responsive font size */
+  font-size: 1vw;
+}
+
+footer > *:nth-child(3) {
+  font-weight: 700;
+  font-size: 0.95vw;
+}
+
+/* get the last div of footer > div */
+footer > div > *:last-child {
+  font-family: 'LeagueSpartan';
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+  align-items: center;
+  font-size: 1.3vw;
+}
+
+/* apply to the hr somewhere in footer */
+footer > hr {
+  width: 94%;
+  margin-bottom: 3.5%;
+  margin-top: 4.5%;
+}
+
+footer > img {
+  width: 4%;
+}
+
+footer > div > div > img {
+  width: 10%;
+}
+
+footer > div > div > div > a > img {
+  width: 7vw;
+}
+
+footer > div {
+  width: 100%;
+  display: flex;
+  margin-top: 2vw;
+  flex-direction: row;
+  align-items: center;
+}
+
+footer > div > div {
+  width: 40%;
+}
+
+/* TITLE */
+
+h1 {
+  margin-top: 5vw;
+  margin-bottom: 0.5vw;
+  text-align: center;
+  font-size: 3.2vw;
+  font-family: 'LeagueSpartan';
+  font-weight: 900;
+  color: var(--violet-clair);
+}
+
+hr {
+
+  /* round the borer */
+  border-radius: 15px;
+  width: 25%;
+  margin: auto;
+  margin-bottom: 5vw;
+  height: 0.33vw;
+  background-color: var(--vert);
+}
+
+
+
+/* button */
+button {
+  background-color: var(--violet-clair);
+  border: none;
+  border-radius: 0;
+  color: white;
+  padding: 0.7vw 3vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1vw;
+  margin: 0.3vw 1vw;
+  cursor: pointer;
+}
